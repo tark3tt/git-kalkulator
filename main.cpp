@@ -12,10 +12,10 @@ int main() {
         return 1;
     }
 
-    cout << "Operator (+, -, *, /): ";
+    cout << "Operator (+, -, *, /, %): ";
     cin >> op;
 
-    cout << "Drugi broj: ";
+    cout << "Drugo stevilo: ";
     if (!(cin >> b)) {
         cout << "Napacen vnos." << endl;
         return 1;
@@ -37,6 +37,20 @@ int main() {
                 return 1;
             }
             cout << "Rezultat: " << a / b << endl;
+            break;
+        case '%':
+            if (a != static_cast<int>(a) ||
+                b != static_cast<int>(b)) {
+                cout << "Operator % zahteva celi stevili." << endl;
+                return 1;
+            }
+            if (b == 0) {
+                cout << "Deljenje z nic ni dovoljeno." << endl;
+                return 1;
+            }
+            cout << "Rezultat: "
+                 << static_cast<int>(a) % static_cast<int>(b)
+                 << endl;
             break;
         default:
             cout << "Neveljaven operator." << endl;
