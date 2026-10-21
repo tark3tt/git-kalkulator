@@ -6,7 +6,7 @@ int main() {
     double a, b;
     char op;
 
-    cout << "Vpisite prvo stevilo: ";
+cout << "Vnesite prvo stevilo: ";
     if (!(cin >> a)) {
         cout << "Napacen vnos." << endl;
         return 1;
