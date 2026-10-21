@@ -1,2 +1,10 @@
-## Testiranje Gita
-Projekt uporabljam za praktično učenje ukazov Git.
+## \## Funkcionalnosti kalkulatorja
+
+## 
+
+## \- Seštevanje, odštevanje, množenje in deljenje
+
+## \- Izračun ostanka pri celoštevilskem deljenju z operatorjem %
+
+## \- Preverjanje neveljavnega vnosa in deljenja z nič
+
