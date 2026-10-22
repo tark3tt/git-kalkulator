@@ -8,3 +8,4 @@
 
 ## \- Preverjanje neveljavnega vnosa in deljenja z nič
 
+Demonstracija ukazov git fetch in git pull.
