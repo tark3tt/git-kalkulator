@@ -1,0 +1,34 @@
+
+name: C++ CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile calculator
+        run: g++ -std=c++17 -Wall -Wextra -pedantic main.cpp -o kalkulator
+
+      - name: Test addition
+        run: |
+          output=$(printf '2\n+\n3\n' | ./kalkulator)
+          echo "$output"
+          echo "$output" | grep -F "Rezultat: 5"
+
+      - name: Test division by zero
+        run: |
+          if printf '10\n/\n0\n' | ./kalkulator; then
+            echo "Napaka: deljenje z nic je moralo spodleteti."
+            exit 1
+          else
+            echo "Test deljenja z nic je uspesen."
+          fi
